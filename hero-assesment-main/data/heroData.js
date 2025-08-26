@@ -7,7 +7,7 @@ export const heroSections = [
     title: 'Welcome to Our Platform',
     description: 'Discover amazing features that will transform your workflow and boost productivity.',
     backgroundImage: {
-      src: '/sample-image.jpg',
+      src: '/sample-image.png',
       alt: 'Modern workspace with laptop and coffee'
     },
     layout: {
@@ -21,7 +21,7 @@ export const heroSections = [
     title: 'Innovation Meets Design',
     description: 'Experience the perfect blend of cutting-edge technology and beautiful user interface design that puts your users first.',
     backgroundImage: {
-      src: '/sample-image.jpg',
+      src: '/sample-image.png',
       alt: 'Creative design workspace'
     },
     layout: {
@@ -35,7 +35,7 @@ export const heroSections = [
     title: 'Scale Your Business',
     description: 'From startup to enterprise, our platform grows with you. Built for teams of all sizes with enterprise-grade security and reliability you can trust.',
     backgroundImage: {
-      src: '/sample-image.jpg',
+      src: '/sample-image.png',
       alt: 'Business team collaboration'
     },
     layout: {
