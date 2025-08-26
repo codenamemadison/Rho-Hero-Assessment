@@ -3,9 +3,44 @@
  * - Create a full-width image background
  */
 
-.placeholder {
-  padding: 2rem;
-  border: 2px dashed #ccc;
-  text-align: center;
-  color: #666;
+
+.hero {
+  padding: 1rem 2rem;
+  width: 80%;
+  height: 50vh;
+  border: 4px solid #ccc;
+
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  display: grid;
+
+  --dark-color: #284b63;
+  --light-color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  place-self: center center; 
+  padding: 1rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  place-self: center center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.light {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.dark {
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }

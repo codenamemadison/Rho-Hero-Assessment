@@ -1,19 +1,47 @@
+import Hero from "/components/Hero/Hero.jsx"
+import { heroSections } from '../data/heroData.js'
+
 export default function Demo() {
   return (
     <div>
-      <h1>Hero Component Demo</h1>
+      <h1>Hero Component Demo - Madison Shimbo</h1>
       <p>Your Hero component should render the CMS data below. Map over the heroSections array and display each hero with different layouts:</p>
 
-      <div style={{ padding: '2rem', backgroundColor: '#f5f5f5', margin: '2rem 0' }}>
-        {/* TODO: Delete once Hero component is implemented */}
-        <h2>Instructions:</h2>
-        <ul>
-          <li>Implement the Hero component in <code>components/Hero/Hero.jsx</code></li>
-          <li>Add styles in <code>components/Hero/Hero.module.css</code></li>
-          <li>Map over the <code>heroSections</code> data to render multiple heroes</li>
-          <li>Test different text lengths and grid placements from the data</li>
-          <li>Ensure each hero section has proper spacing</li>
-        </ul>
+      <div 
+        style={{ 
+            padding: '2rem', 
+            backgroundColor: '#f5f5f5', 
+            margin: '2rem 0', 
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem' }}>
+        {heroSections.map(sectionData => {
+          const {id, title, backgroundImage, theme} = sectionData
+          let description = sectionData.description
+          let placeTitle = sectionData.layout.titlePlacement
+          let placeDescription = sectionData.layout.descriptionPlacement
+          if (sectionData.id == "hero-1") { // hero #1 - USES DEFAULT PLACEMENT
+            placeTitle = ""
+            placeDescription = ""
+          } else if (sectionData.id == "hero-2") { // hero #2 - USES DIFFERENT LAYOUT VALUES
+            placeTitle = "start end"
+            placeDescription = "end start"
+          } else { // hero #3 - USES LONGER TEXT
+            description = description.repeat(5)
+          }
+          return (
+            <Hero 
+              key={id}
+              src={backgroundImage.src}
+              alt={backgroundImage.alt}
+              title={title}
+              description={description}
+              placeTitle={placeTitle}
+              placeDescription={placeDescription}
+              theme={theme}
+            />
+        )})}
       </div>
     </div>
   );
